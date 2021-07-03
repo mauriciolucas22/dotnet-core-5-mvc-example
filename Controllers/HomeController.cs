@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 using dotnet_mvc.Models;
 using dotnet_mvc.Database;
@@ -70,6 +71,34 @@ namespace dotnet_mvc.Controllers
             Console.WriteLine("Categories --- Finish");
 
             return Content("Dados salvos");
+        }
+
+        public IActionResult Relation()
+        {
+            /*Create Product*/
+            // Product p = new Product();
+            // p.Name = "XBox Series X";
+            // p.Category = database.Categories.First(c => c.Id == 1);
+
+            // database.Add(p);
+            // database.SaveChanges();
+
+            /* Show products with relations*/
+            // var productList = database.Products.Include(p => p.Category).ToList();
+
+            // productList.ForEach(item =>
+            // {
+            //     Console.WriteLine(item.ToString());
+            // });
+
+            var productList = database.Products.Include(p => p.Category).Where(p => p.Category.Id == 1).ToList();
+
+            productList.ForEach(item =>
+            {
+                Console.WriteLine(item.Name);
+            });
+
+            return Content("Relation");
         }
     }
 }
