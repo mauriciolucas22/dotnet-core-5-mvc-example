@@ -28,6 +28,10 @@ dotnet restore
 ## RUN
 
 ```bash
+# Migrate
+dotnet ef database update
+
+# Start
 dotnet run
 ```
 
