@@ -4,7 +4,7 @@ Hello, thank you for visit my repository example. This project is a example DotN
 
 I am using Pomelo.EntityFrameworkCore for MySQL to store businesses model information with name and e-mail.
 
-We has a CRUD operation to manage records.
+We has a CRUD operation to manage records of views with bootstrap.
 
 ## SETUP
 
@@ -62,7 +62,7 @@ namespace dotnet_mvc.Models
 
 ```bash
 # Create migrations
-dotnet ef migrations add InitialCreate -v
+dotnet ef migrations add MyMigrationName -v
 
 # Migrate
 dotnet ef database update
