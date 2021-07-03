@@ -1,0 +1,10 @@
+@model dotnet_mvc.Models.Business
+
+<h1>Cadastro</h1>
+
+<form class="form-horizontal" asp-controller="Business" asp-action="Save" method="POST">
+    <input type="hidden" asp-for="Id" />
+    <input type="text" class="form-control" asp-for="Name" placeholder="Nome" />
+    <input type="email" class="form-control" asp-for="Email" placeholder="E-mail" />
+    <button class="btn btn-success">Cadastrar</button>
+</form>

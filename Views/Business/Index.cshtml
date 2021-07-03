@@ -1,0 +1,14 @@
+@model IEnumerable<dotnet_mvc.Models.Business>
+
+<h1>Cadastros</h1>
+<a href="/Business/Signup" class="btn btn-success">Criar cadastro</a>
+
+<ol>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name - @item.Email</li>
+        <a href="/Business/Edit/@item.Id" class="btn btn-success">Editar</a>
+        <a href="/Business/Delete/@item.Id" class="btn btn-danger">Deletar</a>
+        <hr>
+    }
+</ol>
