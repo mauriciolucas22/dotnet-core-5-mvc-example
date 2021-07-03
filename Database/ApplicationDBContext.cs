@@ -7,6 +7,7 @@ namespace dotnet_mvc.Database
     {
 
         public DbSet<Business> Businesses { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
 
